@@ -3,6 +3,7 @@ public class Challenges {
     public static int countTrueFalse(boolean[] arr) {
         // write your code here
         // you will need to change the return statement
+
         return Integer.parseInt(null);
     }
 
@@ -61,8 +62,8 @@ public class Challenges {
     /** The "Reverser"
      * takes a string as input and returns that string in reverse order, with the opposite case.*/
     public static String reverser(String reverseMe){
-        // write your code here
-        // you will need to change the return statement
+        StringBuilder sbr = new StringBuilder(reverseMe);
+        sbr.reverse();
         return "";
     }
 
@@ -71,7 +72,17 @@ public class Challenges {
      * Write a function that reverses the order of an array
      */
     public static int[] reverseArray(int[] arr){
-        // write your code here
+        static void reverse(Integer a[])
+        {
+            Collections.reverse(Arrays.asList(a));
+            System.out.println(Arrays.asList(a));
+        }
+
+        public static void main(String[] args)
+        {
+            Integer [] arr = {10, 20, 30, 40, 50};
+            reverse(arr);
+        }
         // you will need to change the return statement
         return new int[0];
     }
