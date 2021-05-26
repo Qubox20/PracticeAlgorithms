@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Challenges {
     /** Create a function which returns the number of true values there are in an array.*/
     public static int countTrueFalse(boolean[] arr) {
@@ -53,10 +56,19 @@ public class Challenges {
      * Write a program that gets three integers from the user.
      * Count from the first number to the second number in increments of the third number.
      */
-    public static int[] skipCount(int countFrom, int countTo, int countBy){
-        // write your code here
-        // you will need to change the return statement
-        return new int[0];
+    public static String skipCount(int countFrom, int countTo, int countBy){
+//        //Count from first to second number in increments of the third  number and if its possible we will have
+//        //Try again with better variables!
+//
+//        //Valid User input
+//        if (countTo < countFrom) {
+//            return "Try again with better numbers!";
+//        }
+//        StringBuilder answer = new StringBuilder();
+//        //Create pattern based on user input numbers
+//        for (int currentInt = countFrom; currentInt <= countTo);
+        return " ";
+
     }
 
     /** The "Reverser"
@@ -71,20 +83,23 @@ public class Challenges {
      * Reverse An Array
      * Write a function that reverses the order of an array
      */
-    public static int[] reverseArray(int[] arr){
-        static void reverse(Integer a[])
-        {
-            Collections.reverse(Arrays.asList(a));
-            System.out.println(Arrays.asList(a));
-        }
 
-        public static void main(String[] args)
-        {
-            Integer [] arr = {10, 20, 30, 40, 50};
-            reverse(arr);
+    //Create a temporary array
+    //loop through our array
+    //Assign values to the opposite index in the temp array
+    //return the temp array
+    public static int[] reverseArray(int[] arr){
+        int arrlength = arr.length;
+        int[] newarr = new int[arr.length];
+        for(int x=0; x< arrlength; x++){
+            int pos = arrlength-x-1;
+            //System.out.println(x+"      "+pos);
+            //System.out.println(arr[x]+"      "+arr[pos]);
+            newarr[x] = arr[pos];
+            //System.out.println(newarr[x]+"      "+newarr[pos]);
         }
         // you will need to change the return statement
-        return new int[0];
+        return newarr;
     }
 
     /**
@@ -112,9 +127,17 @@ public class Challenges {
      * Create a method that takes an array of strings,removes all duplicate items
      * and returns a new array in the same sequential order as the old array (minus duplicates).
      */
-    public static String[] removeDups(String[] str){
-        // write your code here
-        // you will need to change the return statement
-        return new String[0];
+    public static String[] removeDupes(String[] stringArray){
+        ArrayList<String> tempList = new ArrayList<>();
+        //look at each element in the array
+        for(String arrString: stringArray){
+            //check if we have seen this value yet
+            if(!tempList.contains(arrString)){
+                //if not set it aside and hold it
+                tempList.add(arrString);
+            }
+        }
+        //return all of the held values
+        return tempList.toArray(new String[0]);
     }
 }
