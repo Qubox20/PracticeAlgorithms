@@ -57,18 +57,20 @@ public class Challenges {
      * Count from the first number to the second number in increments of the third number.
      */
     public static String skipCount(int countFrom, int countTo, int countBy){
-//        //Count from first to second number in increments of the third  number and if its possible we will have
-//        //Try again with better variables!
-//
-//        //Valid User input
-//        if (countTo < countFrom) {
-//            return "Try again with better numbers!";
-//        }
-//        StringBuilder answer = new StringBuilder();
-//        //Create pattern based on user input numbers
-//        for (int currentInt = countFrom; currentInt <= countTo);
-        return " ";
-
+        // Validate
+        if(countTo < countFrom){
+            return "Try again with better numbers!";
+        }
+        // hold the pattern temporarily
+        StringBuilder answer= new StringBuilder();
+        // create Pattern based on user input, using a for loop to create the pattern
+        for (int currentInt=countFrom; currentInt<=countTo; currentInt += countBy){
+            answer.append(currentInt).append(".. ");
+        }
+        // remove the last three characters because they are extras
+        answer.setLength(answer.length()-3);
+        //return our answer
+        return answer.toString();
     }
 
     /** The "Reverser"
