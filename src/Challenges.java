@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Locale;
 
 public class Challenges {
     /** Create a function which returns the number of true values there are in an array.*/
@@ -12,9 +13,13 @@ public class Challenges {
 
     /** Create a function that takes an array and returns the absolute difference between the biggest and smallest numbers.*/
     public static int differenceMinMax(int[] nums){
-        // write your code here
-        // you will need to change the return statement
-        return Integer.parseInt(null);
+        // find largest number and hold it
+        Arrays.sort(nums);
+        // find smallest number and hold it
+        int small = nums[0];
+        //return absolute difference
+        int big = nums[nums.length -1];
+        return Math.abs(small-big);
     }
 
     /**
@@ -23,17 +28,36 @@ public class Challenges {
      * The first two letters are repeated twice with an ellipsis ... and space after each,
      * and then the word is pronounced with a question mark ?
      */
-    public static String stutter(String str){
-        // write your code here
-        // you will need to change the return statement
-        return "";
+    public static String stutter(String stutterMe){
+        // find the two letters
+        String start = stutterMe.substring(0,2) + "... ";
+        //first it should repeat twice, ..., space in between
+        return start +start + stutterMe + "?";
     }
 
     /** Write a function that takes an array of numbers and returns the second largest number.*/
-    public static int secondLargestNumber(int[] nums){
-        // write your code here
-        // you will need to change the return statement
-        return Integer.parseInt(null);
+    public static int secondLargestNumber(int[] arr){
+        // declare variables
+        int fmax = 0; // first largest
+        int smax = 0; // second largest
+
+        // assign first element to fmax, smax
+        fmax = arr[0];
+        smax = arr[0];
+
+        // compare with remaining elements
+        // loop
+        for (int i = 1; i < arr.length; i++) {
+            if (fmax < arr[i]) {
+                smax = fmax;
+                fmax = arr[i];
+            } else if(smax < arr[i]) {
+                smax = arr[i];
+            }
+        }
+
+        // return second largest number
+        return smax;
     }
 
     /**
@@ -46,9 +70,17 @@ public class Challenges {
      The output should always be a string even if it is not a multiple of 3 or 5.
      **/
     public static String fizzBuzz(int num){
-        // write your code here
-        // you will need to change the return statement
-        return "";
+        // if both, return fizzbuzz
+        if (num % 5 == 0 &&  num  % 3 == 0)
+            return "FizzBuzz";
+        //if multiple 3 , return fizz
+        if (num % 3 == 0)
+            return "Fizz";
+        //if multiple 5, return buzz
+        if (num % 5 == 0)
+            return "Buzz";
+        // default, returns number as string
+        return Integer.toString(num);
     }
 
     /**
@@ -75,10 +107,11 @@ public class Challenges {
 
     /** The "Reverser"
      * takes a string as input and returns that string in reverse order, with the opposite case.*/
+
     public static String reverser(String reverseMe){
-        StringBuilder sbr = new StringBuilder(reverseMe);
-        sbr.reverse();
-        return "";
+        StringBuilder str=new StringBuilder(reverseMe);
+        str.reverse();
+        return str.toString();
     }
 
     /**
@@ -109,9 +142,12 @@ public class Challenges {
      * Return "DUCK!" if found, otherwise,"Relax, there's no bomb.".
      */
     public static String duckTheBomb(String checkMe){
-        // write your code here
-        // you will need to change the return statement
-        return "";
+        // within the string, find the word bomb
+        if (checkMe.toLowerCase().contains("bomb"))
+            return "DUCK!";
+        //if bomb is found, return "duck"
+        //if bomb is not found; return "Relax, there's no bomb."
+        return "Relax, there's no bomb.";
     }
 
     /** Sort in Ascending Order
@@ -119,6 +155,13 @@ public class Challenges {
      * If the function's argument is null, an empty array or undefined, return an empty array
      */
     public static int[] sortNumsAscending(int[] nums){
+
+        //Arrays.sort();
+
+
+
+
+
         // write your code here
         // you will need to change the return statement
         return new int[0];
