@@ -5,10 +5,20 @@ import java.util.Locale;
 public class Challenges {
     /** Create a function which returns the number of true values there are in an array.*/
     public static int countTrueFalse(boolean[] arr) {
+        int count = 0;
+        for (boolean item: arr){
+            if (item) {
+                count ++;
+            }
+
+        }
+
+
+
         // write your code here
         // you will need to change the return statement
 
-        return Integer.parseInt(null);
+        return count;
     }
 
     /** Create a function that takes an array and returns the absolute difference between the biggest and smallest numbers.*/
@@ -19,7 +29,8 @@ public class Challenges {
         int small = nums[0];
         //return absolute difference
         int big = nums[nums.length -1];
-        return Math.abs(small-big);
+        //return Math.abs(small-big);
+        return big - small;
     }
 
     /**
@@ -109,9 +120,15 @@ public class Challenges {
      * takes a string as input and returns that string in reverse order, with the opposite case.*/
 
     public static String reverser(String reverseMe){
-        StringBuilder str=new StringBuilder(reverseMe);
-        str.reverse();
-        return str.toString();
+        String reverse = "";
+        String abc = "abcdefghijklmnopqrstuvwxyz";
+        for ( String c: reverseMe.split("")){
+           if (abc.contains(c))
+           {reverse = c.toUpperCase() + reverse;}
+           else { reverse = c.toLowerCase() + reverse; }
+
+        }
+        return reverse;
     }
 
     /**
@@ -155,16 +172,8 @@ public class Challenges {
      * If the function's argument is null, an empty array or undefined, return an empty array
      */
     public static int[] sortNumsAscending(int[] nums){
-
-        //Arrays.sort();
-
-
-
-
-
-        // write your code here
-        // you will need to change the return statement
-        return new int[0];
+        Arrays.sort(nums);
+        return nums;
     }
 
     /**
